@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Filtro nombre</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row *ngFor="let row of grid" no-margin="" no-padding="">
+    <ion-card>
+      <ion-item>
+        <h1>{{row.name}}</h1>
+        <h2>Telefono: {{row.phone}}</h2>
+        <h2>Direccion: {{row.address}}</h2>
+        <h2>Estudios: {{row.studies}}</h2>
+      </ion-item>
+    </ion-card>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-input type="text"  [(ngModel)]="filterDB" placeholder="Escribir filtro"></ion-input>
+    <button ion-button round (click)="filter()">
+      <ion-icon name="send"></ion-icon>
+        Filtrar por letra
+    </button>
+  </ion-toolbar>
+</ion-footer>
